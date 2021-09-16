@@ -2,7 +2,7 @@ class Fighter:
     """A Fighter, the base class of Dragon and Terminator, has armor and a Place."""
     is_dragon = False
     damage = 0
-
+    is_watersafe=False
     # ADD CLASS ATTRIBUTES HERE
 
     def __init__(self, armor, place=None):
@@ -19,11 +19,19 @@ class Fighter:
         >>> test_fighter.armor
         3
         """
+        #print(self.place)
         self.armor -= amount
-        if self.armor <= 0:
+        if self.armor <= 0 and (self.is_dragon==False or self.is_container==False):
+            self.place.remove_fighter(self)
+            #print("Hi")
+            self.death_callback()
+        elif self.armor <= 0 and self.is_container==True:
+            temp=self.contained_dragon
+            place=self.place
             self.place.remove_fighter(self)
             self.death_callback()
-            
+            place.dragon=temp
+           # print(place.dragon)
 
     def action(self, colony):
         """The action performed each turn.

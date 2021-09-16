@@ -6,11 +6,12 @@ class Terminator(Fighter):
 
     name = 'Terminator'
     damage = 1
-
+    is_watersafe=True
     # OVERRIDE CLASS ATTRIBUTES HERE
 
     def sting(self, dragon):
         """Attack a Dragon, reducing its armor by 1."""
+        #print(self)
         dragon.reduce_armor(self.damage)
 
     def move_to(self, place):

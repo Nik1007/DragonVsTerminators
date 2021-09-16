@@ -33,7 +33,17 @@ class Place(object):
                 self.dragon = fighter
             else:
                 # BEGIN 3.2
-                assert self.dragon is None, 'Two dragons in {0}'.format(self)
+                if self.dragon.is_container==True and self.dragon.can_contain(fighter):
+                    self.dragon=self.dragon
+                    self.dragon.contain_dragon(fighter)
+                    #print("if")
+                elif fighter.is_container==True and fighter.can_contain(self.dragon):
+                    fighter.contain_dragon(self.dragon)
+                    self.dragon=fighter
+                    #print(self.dragon)
+                    #print("elif")
+                else:        
+                    assert self.dragon is None, 'Two dragons in {0}'.format(self)
                 # END 3.2
         else:
             self.terminators.append(fighter)
@@ -49,6 +59,7 @@ class Place(object):
 
         A Terminator is just removed from the list of Terminators.
         """
+        #print("Hi")
         if fighter.is_dragon:
             # Special handling for DragonKing
             # BEGIN 4.3
