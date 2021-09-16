@@ -7,6 +7,7 @@ class Dragon(Fighter):
     implemented = False  # Only implemented Dragon classes should be instantiated
     food_cost = 0
     blocks_path=True
+    is_container=False
     # ADD CLASS ATTRIBUTES HERE
 
     def __init__(self, armor=1):

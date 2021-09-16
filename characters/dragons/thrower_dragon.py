@@ -38,4 +38,5 @@ class ThrowerDragon(Dragon):
 
     def action(self, colony):
         """Throw a stone at the nearest Terminator in range."""
+        #print("Hi")
         self.throw_at(self.nearest_terminator(colony.skynet))
