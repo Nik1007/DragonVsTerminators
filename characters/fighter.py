@@ -19,7 +19,7 @@ class Fighter:
         >>> test_fighter.armor
         3
         """
-        #print(self.place)
+        #print("Hey")
         self.armor -= amount
         if self.armor <= 0 and (self.is_dragon==False or self.is_container==False):
             self.place.remove_fighter(self)

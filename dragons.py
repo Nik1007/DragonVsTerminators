@@ -6,3 +6,4 @@ from dragons_strategies import start_with_strategy
 from utils import *
 
 setattr(DragonKing, "instantiated", False)
+DragonKing.king=0

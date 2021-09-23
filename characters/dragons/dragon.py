@@ -1,6 +1,7 @@
 from ..fighter import Fighter
 
 
+
 class Dragon(Fighter):
     """A Dragon occupies a place and does work for the colony."""
     is_dragon = True
@@ -8,6 +9,8 @@ class Dragon(Fighter):
     food_cost = 0
     blocks_path=True
     is_container=False
+    is_buffed=False
+    name="dragon"
     # ADD CLASS ATTRIBUTES HERE
 
     def __init__(self, armor=1):
