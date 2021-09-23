@@ -1,3 +1,4 @@
+from characters.dragons.dragon import Dragon
 class Place(object):
     """A Place holds fighters and has an exit to another Place."""
 
@@ -64,6 +65,9 @@ class Place(object):
             # Special handling for DragonKing
             # BEGIN 4.3
             "*** YOUR CODE HERE ***"
+            if fighter.name=='King' and fighter.instanced==True:
+                #print("Hey")
+                return  
             # END 4.3
 
             # Special handling for container dragons

@@ -1,5 +1,5 @@
-from characters.dragons.thrower_dragon import ThrowerDragon
 
+from characters.dragons.thrower_dragon import ThrowerDragon
 
 class ScubaThrower(ThrowerDragon):
     # ADD/OVERRIDE CLASS ATTRIBUTES HERE
